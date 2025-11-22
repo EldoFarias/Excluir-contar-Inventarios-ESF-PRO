@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicitação de Exclusão de Conta - Inventário ESF PRO">
+    <title>Exclusão de Conta - Inventário ESF PRO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: #0175C2;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin: -20px -20px 30px -20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        h2 {
+            color: #0175C2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 22px;
+            border-bottom: 2px solid #0175C2;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 10px 0 15px 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            padding: 20px;
+            border-left: 4px solid #0175C2;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #d4edda;
+            padding: 20px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #0175C2 0%, #0056a3 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(1, 117, 194, 0.3);
+        }
+
+        .contact-box h2 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .email-button {
+            display: inline-block;
+            background: white;
+            color: #0175C2;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .email-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .email-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .steps-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            background: #0175C2;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #0175C2;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f8f9fa;
+            margin: 30px -20px -20px -20px;
+            border-top: 2px solid #dee2e6;
+        }
+
+        .privacy-link {
+            color: #0175C2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .privacy-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .email-button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+
+            .step {
+                flex-direction: column;
+            }
+
+            .step-number {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗑️ Exclusão de Conta e Dados</h1>
+            <p class="subtitle">Inventário ESF PRO</p>
+        </header>
+
+        <section>
+            <p style="font-size: 18px; text-align: center; margin-bottom: 30px;">
+                Você tem o <strong>direito de solicitar a exclusão</strong> da sua conta e de todos os seus dados pessoais, conforme a <strong>Lei Geral de Proteção de Dados (LGPD)</strong>.
+            </p>
+        </section>
+
+        <section>
+            <h2>📋 Como Solicitar a Exclusão da Conta</h2>
+
+            <div class="steps-box">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Envie um E-mail</div>
+                        <p>Envie um e-mail para o desenvolvedor solicitando a exclusão da sua conta.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Informe seus Dados</div>
+                        <p>No e-mail, inclua:</p>
+                        <ul>
+                            <li>Seu nome completo cadastrado no app</li>
+                            <li>E-mail usado no cadastro</li>
+                            <li>Assunto: "Solicitação de Exclusão de Conta - Inventário ESF PRO"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Aguarde a Confirmação</div>
+                        <p>Você receberá uma confirmação por e-mail em até <strong>15 dias úteis</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Exclusão Concluída</div>
+                        <p>Após a confirmação, sua conta e dados serão permanentemente excluídos em até <strong>30 dias</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="contact-box">
+                <h2>📧 Contato para Exclusão de Conta</h2>
+                <p style="font-size: 18px; margin: 20px 0;">
+                    <strong>Desenvolvedor:</strong> Eldo Farias
+                </p>
+                <a href="mailto:eldofarias81@outlook.com?subject=Solicitação de Exclusão de Conta - Inventário ESF PRO&body=Olá, gostaria de solicitar a exclusão da minha conta do Inventário ESF PRO.%0D%0A%0D%0ANome completo: [SEU NOME]%0D%0AE-mail cadastrado: [SEU EMAIL]%0D%0A%0D%0AAtenciosamente." class="email-button">
+                    <span class="email-icon">📧</span>
+                    eldofarias81@outlook.com
+                </a>
+                <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+                    Clique no botão acima para abrir seu aplicativo de e-mail com o modelo pronto
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗂️ O que Será Excluído?</h2>
+
+            <div class="info-box">
+                <h3>✅ Dados que serão PERMANENTEMENTE excluídos:</h3>
+                <ul>
+                    <li><strong>Dados pessoais:</strong> Nome, e-mail, telefone, CPF, foto de perfil</li>
+                    <li><strong>Dados de inventários:</strong> Todos os inventários criados por você</li>
+                    <li><strong>Dados de itens:</strong> Todos os itens cadastrados</li>
+                    <li><strong>Dados de usuários:</strong> Informações de usuários adicionados por você</li>
+                    <li><strong>Backups:</strong> Todos os backups automáticos e manuais</li>
+                    <li><strong>Dados de licença:</strong> Informações de assinaturas e pagamentos</li>
+                    <li><strong>Preferências:</strong> Configurações e personalizações</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Dados que podem ser MANTIDOS:</h3>
+                <ul>
+                    <li><strong>Dados de pagamento:</strong> Registros financeiros podem ser mantidos por até <strong>5 anos</strong> conforme exigido pela legislação fiscal brasileira</li>
+                    <li><strong>Logs de segurança:</strong> Registros técnicos não identificáveis podem ser mantidos por até <strong>90 dias</strong> para fins de segurança</li>
+                    <li><strong>Dados anonimizados:</strong> Estatísticas agregadas sem identificação pessoal podem ser mantidas para melhorias do app</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏱️ Prazo para Exclusão</h2>
+
+            <div class="success-box">
+                <p><strong>Resposta à solicitação:</strong> Até 15 dias úteis</p>
+                <p><strong>Exclusão completa dos dados:</strong> Até 30 dias após confirmação</p>
+                <p><strong>Período total máximo:</strong> 45 dias úteis</p>
+            </div>
+
+            <p>Durante esse período, seus dados ficam inacessíveis e marcados para exclusão. Após a exclusão, <strong>não será possível recuperar</strong> os dados.</p>
+        </section>
+
+        <section>
+            <h2>🔒 Segurança e Privacidade</h2>
+
+            <p>A exclusão de dados segue rigorosos protocolos de segurança:</p>
+
+            <ul>
+                <li>✅ Exclusão permanente e irreversível</li>
+                <li>✅ Remoção de backups e cópias</li>
+                <li>✅ Processo auditado e documentado</li>
+                <li>✅ Confirmação enviada por e-mail</li>
+                <li>✅ Conformidade total com a LGPD</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>❓ Perguntas Frequentes</h2>
+
+            <h3>1. Posso cancelar a solicitação de exclusão?</h3>
+            <p>Sim, você pode cancelar a solicitação até o momento da confirmação final. Após a exclusão ser processada, não será possível recuperar os dados.</p>
+
+            <h3>2. Meus dados de pagamento também serão excluídos?</h3>
+            <p>Dados de transações financeiras podem ser mantidos por até 5 anos conforme exigência legal fiscal. Porém, eles serão desvinculados de sua identificação pessoal.</p>
+
+            <h3>3. Posso criar uma nova conta depois?</h3>
+            <p>Sim, você pode criar uma nova conta a qualquer momento. Porém, os dados da conta anterior não serão recuperados.</p>
+
+            <h3>4. O que acontece se eu tiver uma assinatura ativa?</h3>
+            <p>Se você tiver uma licença ativa paga, ela será cancelada imediatamente e não haverá reembolso proporcional. Certifique-se de que deseja prosseguir antes de solicitar a exclusão.</p>
+
+            <h3>5. Preciso desinstalar o app?</h3>
+            <p>Não é obrigatório, mas recomendamos desinstalar o aplicativo após a confirmação da exclusão para liberar espaço no dispositivo.</p>
+
+            <h3>6. Quanto tempo leva para processar minha solicitação?</h3>
+            <p>Você receberá uma resposta em até <strong>15 dias úteis</strong>. A exclusão completa será concluída em até <strong>30 dias</strong> após a confirmação.</p>
+        </section>
+
+        <section>
+            <h2>📜 Seus Direitos (LGPD)</h2>
+
+            <p>Além da exclusão de conta, você também tem direito a:</p>
+
+            <ul>
+                <li><strong>Acesso:</strong> Solicitar cópia de todos os seus dados</li>
+                <li><strong>Correção:</strong> Atualizar dados incorretos ou desatualizados</li>
+                <li><strong>Portabilidade:</strong> Exportar seus dados em formato legível</li>
+                <li><strong>Revogação de consentimento:</strong> Retirar permissões de uso de dados</li>
+                <li><strong>Informação:</strong> Saber como seus dados são utilizados</li>
+            </ul>
+
+            <p>Para exercer esses direitos, entre em contato através do mesmo e-mail: <strong>eldofarias81@outlook.com</strong></p>
+        </section>
+
+        <section>
+            <h2>📞 Outras Formas de Contato</h2>
+
+            <div class="info-box">
+                <p><strong>📧 E-mail de Suporte:</strong> eldofarias81@outlook.com</p>
+                <p><strong>👨‍💻 Desenvolvedor:</strong> Eldo Farias</p>
+                <p><strong>⏰ Tempo de Resposta:</strong> Até 15 dias úteis</p>
+                <p style="margin-top: 15px;">
+                    <strong>🛡️ Autoridade de Proteção de Dados:</strong><br>
+                    Caso não tenha sua solicitação atendida, você pode contatar a ANPD:<br>
+                    <a href="https://www.gov.br/anpd/pt-br" target="_blank" style="color: #0175C2;">https://www.gov.br/anpd/pt-br</a>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="warning-box">
+                <h3>⚠️ ATENÇÃO: Antes de Solicitar a Exclusão</h3>
+                <p><strong>A exclusão de conta é PERMANENTE e IRREVERSÍVEL.</strong></p>
+                <p>Certifique-se de que:</p>
+                <ul>
+                    <li>❌ Você não precisa mais dos dados de inventário</li>
+                    <li>❌ Você fez backup de informações importantes</li>
+                    <li>❌ Você não tem assinatura ativa (não haverá reembolso)</li>
+                    <li>❌ Você entende que não poderá recuperar os dados</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <h3>Inventário ESF PRO</h3>
+            <p>Sistema de Gestão de Inventário para Estratégia Saúde da Família</p>
+
+            <p style="margin-top: 20px;">
+                <a href="politica-privacidade.html" class="privacy-link">📋 Política de Privacidade</a>
+            </p>
+
+            <p style="margin-top: 15px; font-size: 14px; color: #666;">
+                <strong>Desenvolvedor:</strong> Eldo Farias<br>
+                <strong>E-mail:</strong> eldofarias81@outlook.com<br>
+                <strong>Versão:</strong> 2.3.9
+            </p>
+
+            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                Esta página está em conformidade com a LGPD (Lei nº 13.709/2018)<br>
+                e o Marco Civil da Internet (Lei nº 12.965/2014)
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
